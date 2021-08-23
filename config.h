@@ -18,7 +18,7 @@ static const int swallowfloating =
     0;                        /* 1 means swallow floating windows by default */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
-static const char *fonts[] = {"Monofur Nerd Font Mono:size=16",
+static const char *fonts[] = {"JetBrains Mono Nerd Font:size=16",
                               "FreeSans:size=16",
                               "IPAGothic:size=16"}; /*Size 16 for 1440p*/
 static const char dmenufont[] = "monospace:size=16";
