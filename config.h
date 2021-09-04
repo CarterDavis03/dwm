@@ -93,8 +93,7 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
 static const char *termcmd[] = {"st", NULL};
-static const char *openchromium[] = {"firefox", NULL};
-static const char *opendolphin[] = {"dolphin", NULL};
+static const char *openfirefox[] = {"firefox", NULL};
 static const char *openranger[] = {"st", "ranger", NULL};
 static const char *opensuranger[] = {"st", "sudo", "ranger", "/home/carter/",
                                      NULL};
@@ -106,11 +105,6 @@ static const char *setenglish[] = {"setxkbmap", "us", NULL};
 static const char *sethebrew[] = {"setxkbmap", "il", NULL};
 static const char *opennvim[] = {"emacs", NULL};
 static const char *openpulsemixer[] = {"st", "pulsemixer", NULL};
-static const char *startwp[] = {"/home/carter/.apps/startwp.sh", NULL};
-static const char *startwpeat[] = {"/home/carter/.apps/startwpeat.sh", NULL};
-static const char *stopwp[] = {"/home/carter/.apps/stopwp.sh", NULL};
-static const char *ytsearch[] = {"yts", "-g", NULL};
-static const char *ytsearchchannel[] = {"yts", "-g", "-c", NULL};
 static const char *kblock[] = {"/home/carter/.apps/kblock.sh", NULL};
 static const char *audiomute[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
                                   "toggle", NULL};
@@ -120,24 +114,15 @@ static const char *audiodown[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
                                   "-10%", NULL};
 static const char *screenshot[] = {"flameshot", "full", "-p", "/home/carter/Pictures/Screenshots/", NULL};
 static const char *screenshotregion[] = {"flameshot", "gui", NULL};
-static const char *killmpv[] = {"pkill", "mpv", NULL};
-static const char *playjazzcmd[] = {"playjazz", NULL};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_Print, spawn, {.v = screenshot}},
     {MODKEY | ShiftMask, XK_Print, spawn, {.v = screenshotregion}},
-    {MODKEY, XF86XK_AudioPlay, spawn, {.v = playjazzcmd}},
-    {MODKEY | ShiftMask, XF86XK_AudioPlay, spawn, {.v = killmpv}},
     {NULL, XF86XK_AudioMute, spawn, {.v = audiomute}},
     {NULL, XF86XK_AudioRaiseVolume, spawn, {.v = audioup}},
     {NULL, XF86XK_AudioLowerVolume, spawn, {.v = audiodown}},
     {MODKEY, XK_F12, spawn, {.v = kblock}},
-    {MODKEY, XK_backslash, spawn, {.v = ytsearch}},
-    {MODKEY | ShiftMask, XK_backslash, spawn, {.v = ytsearchchannel}},
-    {MODKEY, XK_F8, spawn, {.v = startwp}},
-    {MODKEY | ShiftMask, XK_F8, spawn, {.v = stopwp}},
-    {MODKEY, XK_F9, spawn, {.v = startwpeat}},
     {MODKEY, XK_F1, spawn, {.v = opennvim}},
     {MODKEY, XK_F4, spawn, {.v = openpulsemixer}},
     {MODKEY | ShiftMask, XK_F7, spawn, {.v = sethebrew}},
@@ -149,8 +134,7 @@ static Key keys[] = {
     {ControlMask | ShiftMask, XK_Escape, spawn, {.v = htopopen}},
     {MODKEY | ShiftMask, XK_F3, spawn, {.v = opensuranger}},
     {MODKEY, XK_F3, spawn, {.v = openranger}},
-    {MODKEY | ControlMask, XK_F3, spawn, {.v = opendolphin}},
-    {MODKEY, XK_F2, spawn, {.v = openchromium}},
+    {MODKEY, XK_F2, spawn, {.v = openfirefox}},
     /*{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd
        } },*/
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
