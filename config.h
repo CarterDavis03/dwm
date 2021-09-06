@@ -98,6 +98,7 @@ static const char *openranger[] = {"st", "ranger", NULL};
 static const char *opensuranger[] = {"st", "sudo", "ranger", "/home/carter/",
                                      NULL};
 static const char *blurlock[] = {"/home/carter/.apps/lockscreen.sh", NULL};
+static const char *screenoff[] = {"screenoff", NULL};
 static const char *htopopen[] = {"st", "htop", NULL};
 static const char *suspend[] = {"/home/carter/.apps/suspend.sh", NULL};
 static const char *rofirun[] = {"rofi", "-show", "drun", NULL};
@@ -131,6 +132,7 @@ static Key keys[] = {
     {MODKEY, XK_9, spawn, {.v = blurlock}},
     {NULL, XK_F9, spawn, {.v = blurlock}},
     {MODKEY, XK_0, spawn, {.v = suspend}},
+    {MODKEY | ShiftMask, XK_0, spawn, {.v = screenoff}},
     {ControlMask | ShiftMask, XK_Escape, spawn, {.v = htopopen}},
     {MODKEY | ShiftMask, XK_F3, spawn, {.v = opensuranger}},
     {MODKEY, XK_F3, spawn, {.v = openranger}},
