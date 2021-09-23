@@ -2,7 +2,6 @@
 
 xset -dpms
 xset s off
-sudo timedatectl set-ntp true
 
 # Fix for Android Studio
 export _JAVA_AWT_WM_NONREPARENTING=1
