@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=dwm Session
+Comment=dwm session
+Exec=dwm
+Icon=
+Type=Application
+DesktopNames=dwm
