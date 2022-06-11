@@ -102,22 +102,27 @@ static const char *screenoff[] = {"screenoff", NULL};
 static const char *htopopen[] = {"st", "htop", NULL};
 static const char *suspend[] = {"/home/carter/.apps/suspend.sh", NULL};
 static const char *rofirun[] = {"rofi", "-show", "drun", NULL};
-static const char *setenglish[] = {"setxkbmap", "us", NULL};
+static const char *setenglish[] = {"setxkbmap", "gb", NULL};
 static const char *sethebrew[] = {"setxkbmap", "il", NULL};
-static const char *opennvim[] = {"emacs", NULL};
+static const char *opennvim[] = {"code", NULL};
 static const char *openpulsemixer[] = {"st", "pulsemixer", NULL};
 static const char *kblock[] = {"/home/carter/.apps/kblock.sh", NULL};
 static const char *audiomute[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
                                   "toggle", NULL};
 static const char *audioup[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
-                                "+10%", NULL};
+                                "+5%", NULL};
 static const char *audiodown[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
-                                  "-10%", NULL};
+                                  "-5%", NULL};
 static const char *screenshot[] = {"flameshot", "full", "-p", "/home/carter/Pictures/Screenshots/", NULL};
 static const char *screenshotregion[] = {"flameshot", "gui", NULL};
+static const char *connectairpods[] = {"bluetoothctl", "connect", "D4:68:AA:88:A7:63", NULL};
+static const char *disconnectairpods[] = {"bluetoothctl", "disconnect", "D4:68:AA:88:A7:63", NULL};
+
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
+    {NULL, XK_F9, spawn, {.v = connectairpods}},
+    {ShiftMask, XK_F9, spawn, {.v = disconnectairpods}},
     {MODKEY, XK_Print, spawn, {.v = screenshot}},
     {MODKEY | ShiftMask, XK_Print, spawn, {.v = screenshotregion}},
     {NULL, XF86XK_AudioMute, spawn, {.v = audiomute}},
@@ -130,12 +135,12 @@ static Key keys[] = {
     {MODKEY | ShiftMask, XK_F6, spawn, {.v = setenglish}},
     {MODKEY, XK_d, spawn, {.v = rofirun}},
     {MODKEY, XK_9, spawn, {.v = blurlock}},
-    {NULL, XK_F9, spawn, {.v = blurlock}},
     {MODKEY, XK_0, spawn, {.v = suspend}},
     {MODKEY | ShiftMask, XK_0, spawn, {.v = screenoff}},
     {ControlMask | ShiftMask, XK_Escape, spawn, {.v = htopopen}},
     {MODKEY | ShiftMask, XK_F3, spawn, {.v = opensuranger}},
     {MODKEY, XK_F3, spawn, {.v = openranger}},
+    {MODKEY, XK_e, spawn, {.v = openranger}},
     {MODKEY, XK_F2, spawn, {.v = openchromium}},
     /*{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd
        } },*/
