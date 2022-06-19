@@ -42,8 +42,7 @@ static const Rule rules[] = {
      *	WM_CLASS(STRING) = instance, class
      *	WM_NAME(STRING) = title
      */
-    /* class     instance  title           tags mask  isfloating  isterminal
-       noswallow  monitor */
+    /* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
     {"Gimp", NULL, NULL, 0, 1, 0, 0, -1},
     {"st", NULL, NULL, 0, 0, 1, 0, -1},
     {"zathura", NULL, NULL, 0, 0, 0, 1, -1},
@@ -104,7 +103,7 @@ static const char *suspend[] = {"/home/carter/.apps/suspend.sh", NULL};
 static const char *rofirun[] = {"rofi", "-show", "drun", NULL};
 static const char *setenglish[] = {"setxkbmap", "gb", NULL};
 static const char *sethebrew[] = {"setxkbmap", "il", NULL};
-static const char *opennvim[] = {"code", NULL};
+static const char *opennvim[] = {"st", "nvim", NULL};
 static const char *openpulsemixer[] = {"st", "pulsemixer", NULL};
 static const char *kblock[] = {"/home/carter/.apps/kblock.sh", NULL};
 static const char *audiomute[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
@@ -193,3 +192,4 @@ static Button buttons[] = {
     {ClkTagBar, MODKEY, Button1, tag, {0}},
     {ClkTagBar, MODKEY, Button3, toggletag, {0}},
 };
+
