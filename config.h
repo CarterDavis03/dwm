@@ -2,12 +2,9 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
-static const unsigned int systraypinning =
-    0; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor
-          X */
-static const unsigned int systrayonleft =
-    1; /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int borderpx = 5; /* border pixel of windows */
+static const unsigned int systraypinning = 0; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayonleft = 1; /* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 2; /* systray spacing */
 static const int systraypinningfailfirst =
     1; /* 1: if pinning fails, display systray on the first monitor, False:
@@ -68,7 +65,11 @@ static const Layout layouts[] = {
     /* symbol     arrange function */
     {"[]=", dwindle}, /* first entry is default */
     {"><>", NULL},    /* no layout function means floating behavior */
-    {"[M]", monocle}, {"[@]", spiral}, {"[\\]", tile},
+    {"[M]", monocle},
+    {"[@]", spiral},
+    {"[\\]", tile},
+    { "|M|",      centeredmaster },
+    { ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -154,6 +155,8 @@ static Key keys[] = {
     {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
     {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_r, setlayout, {.v = &layouts[3]}},
+    {MODKEY, XK_u, setlayout, {.v = &layouts[5]} },
+    {MODKEY, XK_o, setlayout, {.v = &layouts[6]} },
     {MODKEY | ShiftMask, XK_r, setlayout, {.v = &layouts[4]}},
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
