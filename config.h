@@ -118,7 +118,6 @@ static Key keys[] = {
     {MODKEY, XK_F12, spawn, {.v = kblock}},
     {MODKEY, XK_F1, spawn, {.v = opennvim}},
     {MODKEY, XK_F4, spawn, {.v = openpulsemixer}},
-    {MODKEY, XK_d, spawn, {.v = rofirun}},
     {MODKEY, XK_9, spawn, {.v = blurlock}},
     {MODKEY, XK_0, spawn, {.v = suspend}},
     {MODKEY | ShiftMask, XK_0, spawn, {.v = screenoff}},
@@ -127,7 +126,7 @@ static Key keys[] = {
     {MODKEY, XK_F3, spawn, {.v = openranger}},
     {MODKEY, XK_e, spawn, {.v = openranger}},
     {MODKEY, XK_F2, spawn, {.v = openchromium}},
-    { MODKEY | ShiftMask,  XK_d,  spawn,  {.v = dmenucmd } },
+    {MODKEY,  XK_d,  spawn,  {.v = dmenucmd } },
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
@@ -147,8 +146,6 @@ static Key keys[] = {
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY | ShiftMask, XK_f, togglefullscr, {0}},
-    /*{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-    { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },*/
     {MODKEY, XK_comma, focusmon, {.i = -1}},
     {MODKEY, XK_period, focusmon, {.i = +1}},
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
@@ -158,6 +155,11 @@ static Key keys[] = {
             TAGKEYS(XK_8, 7){MODKEY | ShiftMask, XK_q, quit, {0}},
     {MODKEY | ControlMask | ShiftMask, XK_q, quit, {1}},
 };
+
+
+    /*{MODKEY, XK_d, spawn, {.v = rofirun}},*/
+    /*{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+    { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },*/
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,
