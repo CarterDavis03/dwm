@@ -104,10 +104,12 @@ static const char *screenshot[] = {"flameshot", "full", "-p", "/home/carter/Pict
 static const char *screenshotregion[] = {"flameshot", "gui", NULL};
 static const char *connectairpods[] = {"bluetoothctl", "connect", "D4:68:AA:88:A7:63", NULL};
 static const char *disconnectairpods[] = {"bluetoothctl", "disconnect", "D4:68:AA:88:A7:63", NULL};
+static const char *emojiselector[] = {"dmenuunicode", NULL};
 
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
+    {MODKEY | ShiftMask, XK_e, spawn, {.v = emojiselector}},
     {NULL, XK_F9, spawn, {.v = connectairpods}},
     {ShiftMask, XK_F9, spawn, {.v = disconnectairpods}},
     {MODKEY, XK_Print, spawn, {.v = screenshot}},
