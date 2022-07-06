@@ -105,10 +105,14 @@ static const char *screenshotregion[] = {"flameshot", "gui", NULL};
 static const char *connectairpods[] = {"bluetoothctl", "connect", "D4:68:AA:88:A7:63", NULL};
 static const char *disconnectairpods[] = {"bluetoothctl", "disconnect", "D4:68:AA:88:A7:63", NULL};
 static const char *emojiselector[] = {"dmenuunicode", NULL};
+static const char *picom[] = {"picom", NULL};
+static const char *killpicom[] = {"pkill", "picom", NULL};
 
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
+    {MODKEY, XK_p, spawn, {.v = picom}},
+    {MODKEY | ShiftMask, XK_p, spawn, {.v = killpicom}},
     {MODKEY | ShiftMask, XK_e, spawn, {.v = emojiselector}},
     {NULL, XK_F9, spawn, {.v = connectairpods}},
     {ShiftMask, XK_F9, spawn, {.v = disconnectairpods}},
@@ -134,7 +138,7 @@ static Key keys[] = {
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
-    {MODKEY, XK_p, incnmaster, {.i = -1}},
+    {MODKEY, XK_o, incnmaster, {.i = -1}},
     {MODKEY, XK_h, setmfact, {.f = -0.05}},
     {MODKEY, XK_l, setmfact, {.f = +0.05}},
     {MODKEY | ShiftMask, XK_Return, zoom, {0}},
