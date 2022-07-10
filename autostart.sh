@@ -18,5 +18,5 @@ exec solaar -d -w hide &
 exec pactl load-module module-switch-on-connect &
 exec blueman-applet &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec xidlehook --not-when-fullscreen --not-when-audio --detect-sleep --timer 300 blurlock '' &
+exec xidlehook --not-when-fullscreen --not-when-audio --timer 300 blurlock '' &
 exec setxkbmap gb
