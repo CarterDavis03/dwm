@@ -109,11 +109,15 @@ static const char *disconnectairpods[] = {"bluetoothctl", "disconnect", "D4:68:A
 static const char *emojiselector[] = {"dmenuunicode", NULL};
 static const char *picom[] = {"picom", NULL};
 static const char *killpicom[] = {"pkill", "picom", NULL};
+static const char *setenglish[] = {"setxkbmap", "gb", NULL};
+static const char *sethebrew[] = {"setxkbmap", "il", NULL};
 
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_p, spawn, {.v = picom}},
+    {MODKEY | ShiftMask, XK_F7, spawn, {.v = sethebrew}},
+    {MODKEY | ShiftMask, XK_F6, spawn, {.v = setenglish}},
     {MODKEY | ShiftMask, XK_p, spawn, {.v = killpicom}},
     {MODKEY | ShiftMask, XK_e, spawn, {.v = emojiselector}},
     {NULL, XK_F9, spawn, {.v = connectairpods}},
