@@ -46,6 +46,7 @@ static const Rule rules[] = {
     {"Discord", NULL, NULL, 1 << 7, 0, 0, 0, -1},
     {"discord", NULL, NULL, 1 << 7, 0, 0, 0, -1},
     {NULL, NULL, "Authenticate", 0, 1, 0, 0, -1},
+    {"Spotify", NULL, NULL, 1 << 7, 0, 0, 0, -1},
 
 };
 
