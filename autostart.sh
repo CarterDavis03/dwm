@@ -8,7 +8,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 exec dbus-update-activation-environment DISPLAY &
 exec unclutter -idle 5 &
-exec picom &
 exec clipit -d -n &
 exec ~/.fehbg &
 exec changekeys &
