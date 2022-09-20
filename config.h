@@ -47,6 +47,7 @@ static const Rule rules[] = {
     {"discord", NULL, NULL, 1 << 7, 0, 0, 0, -1},
     {NULL, NULL, "Authenticate", 0, 1, 0, 0, -1},
     {"Spotify", NULL, NULL, 1 << 7, 0, 0, 0, -1},
+    {NULL, NULL, "PyPCSleepTool", 0, 1, 0, 1, -1},
 
 };
 
@@ -100,9 +101,9 @@ static const char *kblock[] = {"xtrlock", NULL};
 static const char *audiomute[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
                                   "toggle", NULL};
 static const char *audioup[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
-                                "+5%", NULL};
+                                "+1%", NULL};
 static const char *audiodown[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
-                                  "-5%", NULL};
+                                  "-1%", NULL};
 static const char *screenshot[] = {"flameshot", "full", "-p", "/home/carter/Pictures/Screenshots/", NULL};
 static const char *screenshotregion[] = {"flameshot", "gui", NULL};
 static const char *connectairpods[] = {"bluetoothctl", "connect", "D4:68:AA:88:A7:63", NULL};
